@@ -113,16 +113,6 @@ export default ({ Manifest }) => {
           onPress={() => reload()}
         />
       </FormSection>
-      <FormDivider />
-      <FormText style={styles.info}>
-        {
-          (() => [
-            `Version ${Manifest.version} by ${Manifest.authors
-              .map((author) => author.name)
-              .join(", ")}`,
-          ])()[0]
-        }
-      </FormText>
     </>
   );
 };
