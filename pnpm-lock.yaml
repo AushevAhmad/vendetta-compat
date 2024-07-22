@@ -9,51 +9,51 @@ importers:
   .:
     dependencies:
       enmity:
-        specifier: '*'
+        specifier: ^1.2.4
         version: 1.2.4
     optionalDependencies:
       esbuild-darwin-64:
-        specifier: ^0.14.21
+        specifier: ^0.14.54
         version: 0.14.54
       esbuild-darwin-arm64:
-        specifier: ^0.14.21
+        specifier: ^0.14.54
         version: 0.14.54
       esbuild-linux-64:
-        specifier: ^0.14.21
+        specifier: ^0.14.54
         version: 0.14.54
       esbuild-windows-64:
-        specifier: ^0.14.21
+        specifier: ^0.14.54
         version: 0.14.54
     devDependencies:
       '@rollup/plugin-commonjs':
-        specifier: ^21.0.1
+        specifier: ^21.1.0
         version: 21.1.0(rollup@2.79.1)
       '@rollup/plugin-json':
         specifier: ^4.1.0
         version: 4.1.0(rollup@2.79.1)
       '@rollup/plugin-node-resolve':
-        specifier: ^13.1.1
+        specifier: ^13.3.0
         version: 13.3.0(rollup@2.79.1)
       '@types/node':
-        specifier: ^17.0.5
+        specifier: ^17.0.45
         version: 17.0.45
       '@typescript-eslint/eslint-plugin':
-        specifier: ^5.8.1
+        specifier: ^5.62.0
         version: 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)
       '@typescript-eslint/parser':
-        specifier: ^5.8.1
+        specifier: ^5.62.0
         version: 5.62.0(eslint@8.57.0)(typescript@5.5.3)
       esbuild:
-        specifier: ^0.14.9
+        specifier: ^0.14.54
         version: 0.14.54
       eslint:
-        specifier: ^8.5.0
+        specifier: ^8.57.0
         version: 8.57.0
       rollup:
-        specifier: ^2.62.0
+        specifier: ^2.79.1
         version: 2.79.1
       rollup-plugin-esbuild:
-        specifier: ^4.8.2
+        specifier: ^4.10.3
         version: 4.10.3(esbuild@0.14.54)(rollup@2.79.1)
 
 packages:
