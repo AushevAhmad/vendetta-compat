@@ -8,7 +8,6 @@ import {
 } from "enmity/components";
 import { Constants, React, StyleSheet, Toasts } from "enmity/metro/common";
 import { get, set } from "enmity/api/settings";
-import locale from "../common/locale";
 import { getIDByName } from "enmity/api/assets";
 import { reload } from "enmity/api/native";
 
@@ -34,10 +33,10 @@ export default ({ Manifest }) => {
 
   return (
     <>
-      <FormSection title={locale.settings.strangeWording.title[0]}>
+      <FormSection title="Options">
         <FormRow
-          label={locale.settings.customVendettaURL.title[0]}
-          subLabel={locale.settings.customVendettaURL.description[0]}
+          label="Custom Vendetta URL"
+          subLabel="Loads Vendetta from a custom endpoint"
           leading={
             <FormRow.Icon
               style={styles.icon}
@@ -72,15 +71,15 @@ export default ({ Manifest }) => {
               })
             }
             placeholder="http://localhost:4040/vendetta.js"
-            title={locale.settings.customVendettaURL.input[0]}
+            title="Vendetta URL"
           />
         )}
       </FormSection>
       <FormDivider />
-      <FormSection title={locale.settings.clearOptions.title[0]}>
+      <FormSection title="Clear Stores">
         <FormRow
-          label={locale.settings.clearOptions.title[0]}
-          subLabel={locale.settings.clearOptions.description[0]}
+          label="Clear Stores"
+          subLabel="Clear enable dialog and cached code."
           leading={
             <FormRow.Icon
               style={styles.icon}
@@ -93,17 +92,17 @@ export default ({ Manifest }) => {
             set(Manifest.name, "strangeCode", 0);
 
             Toasts.open({
-              content: locale.toasts.clear[0],
-              source: locale.toasts.icons.success,
+              content: "Successfully cleared all stored data.",
+              source: getIDByName("ic_check_18px"),
             });
           }}
         />
       </FormSection>
       <FormDivider />
-      <FormSection title={locale.settings.reload.title[0]}>
+      <FormSection title="Reload">
         <FormRow
-          label={locale.settings.reload.title[0]}
-          subLabel={locale.settings.reload.description[0]}
+          label="Reload"
+          subLabel="Reload Discord to apply any changes."
           leading={
             <FormRow.Icon
               style={styles.icon}
@@ -115,7 +114,15 @@ export default ({ Manifest }) => {
         />
       </FormSection>
       <FormDivider />
-      <FormText style={styles.info}>{locale.settings.info()[0]}</FormText>
+      <FormText style={styles.info}>
+        {
+          (() => [
+            `Version ${Manifest.version} by ${Manifest.authors
+              .map((author) => author.name)
+              .join(", ")}`,
+          ])()[0]
+        }
+      </FormText>
     </>
   );
 };

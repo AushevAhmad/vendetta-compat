@@ -3,7 +3,6 @@ import { get, set } from "enmity/api/settings";
 import { Plugin, registerPlugin } from "enmity/managers/plugins";
 import { Dialog, React } from "enmity/metro/common";
 import Manifest from "../manifest.json";
-import locale from "./common/locale";
 import Settings from "./components/Settings";
 
 const VendettaCompat: Plugin = {
@@ -14,9 +13,9 @@ const VendettaCompat: Plugin = {
     const showSuccessDialog = () => {
       if (!get(Manifest.name, "shownEnabledDialog", false)) {
         Dialog.show({
-          title: locale.dialogs.enabled.title[0],
-          body: locale.dialogs.enabled.description[0],
-          confirmText: locale.dialogs.enabled.okayText[0],
+          title: "Enable Vendetta",
+          body: "Successfully enabled Vendetta. To disable it, just disable the plugin.",
+          confirmText: "Okay",
           onConfirm: () => set(Manifest.name, "shownEnabledDialog", true),
         });
       }
@@ -62,15 +61,17 @@ const VendettaCompat: Plugin = {
 
         // askdetta todetta reloadetta
         Dialog.show({
-          title: locale.dialogs.unload.title[0],
-          body: locale.dialogs.unload.description[0],
-          confirmText: locale.dialogs.unload.okayText[0],
-          cancelText: locale.dialogs.unload.cancelText[0],
+          title: "Reload Required",
+          body: "To fully disable Vendetta, you need to reload your Discord. Please note that Vendetta will not work until you reload Discord.",
+          confirmText: "Reload",
+          cancelText: "Later",
           onConfirm: () => reload(),
         });
       } catch (e) {
         // lodetta errodetta todetta consodetta
-        console.error(`[${Manifest.name}] ${locale.errors.unload[0]}: ${e}`);
+        console.error(
+          `[${Manifest.name}] Error when trying to unload Vendetta: ${e}`
+        );
       }
     }
   },
